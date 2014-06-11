@@ -1,0 +1,26 @@
+TODO-List for the refactoring:
+
+- create class for debug outputs which writes into a log-file
+- c++ wrapper for all external c-libraries or switch to c++ libraries
+- use pure c++ and remove unnecessary c-code
+- change identification of chat messages (currently by alias of the contact/identity)
+- review the config file
+- second config file which is not synchronized via firefox-sync
+- extend system architecture to a more modular architecture in order to be able to start and stop specific components
+- discuss key-signing of chat messages
+- error handling of invalid json strings
+- timer: check for new messages
+- timer: check for modified config on the firefox sync server
+- remove classes QblSocket and QblWeb, communication with servers via curl
+- construct use cases for firefox sync to decide priority of changes
+- construct use cases for file sync to decide priority of changes
+- chang type of arrays in the config file to store timestamp of last modification of the array
+- add multithreading for components (firefox-sync, chat message receiving and sending, file sync upload and download, future extensions)
+- use ssl with pinning in the curl-library
+- review destructors of all classes
+- remove memory leaks
+- encryption/decryption of the config file
+- encryption/decryption of stored config data on the firefox-sync server
+- review inheritance structure of classes
+- add in-code documentation
+- change identification of chat messages

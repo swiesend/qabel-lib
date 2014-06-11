@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+datarootdir=@datarootdir@
+datadir=@datadir@
+includedir=@includedir@/libqabel
+
+Name: libqabel
+Description: Qabel library
+Version: @VERSION@
+Requires: json-c
+Libs: -L${libdir} -llibqabel
+Cflags: -I${includedir}
