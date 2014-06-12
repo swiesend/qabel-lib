@@ -4,7 +4,7 @@ cmake_minimum_required (VERSION 2.8)
 project (libqabel)
 add_definitions(-std=c++11)
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
 
 find_package(Glib)
 include_directories(${Glib_INCLUDE_DIRS})
