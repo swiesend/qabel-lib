@@ -1,0 +1,40 @@
+language: cpp
+
+compiler: gcc
+
+before_install:
+    - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+    - sudo apt-get update -qq
+
+install:
+    # install json-c 0.12
+    - sudo apt-get install build-essential
+    - sudo apt-get install wget
+    - sudo apt-get install libtool
+    - git clone https://github.com/json-c/json-c
+    - cd json-c
+    - sh autogen.sh
+    - ./configure
+    - make
+    - sudo make install
+    - cd ..
+
+    - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+    - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
+    - sudo apt-get install libssl-dev
+    - sudo apt-get install libcurl4-openssl-dev
+    - sudo apt-get install zlib1g-dev
+    - sudo apt-get install cmake
+    - sudo apt-get install cmake-data
+    - sudo apt-get install libglib2.0-dev
+
+before_script:
+    - mkdir build
+    - cd build
+
+script:
+    - cmake ..
+    - make
+
+notifications:
+    email: false
